@@ -1,0 +1,21 @@
+** sch_path: /home/aziz-faozi/azizprojects/rf_ic/rc_ckt/rc_ckt2.sch
+
+.include "/home/aziz-faozi/azizprojects/rf_ic/rc_ckt/q2n2907.lib"
+**.subckt rc_ckt2
+R1 VOUT VIN 1k m=1
+C1 VOUT GND 1p m=1
+V1 VIN GND PULSE(0 1 0.5n 100p 100p 1n 2n)
+Q1 VOUT2 VOUT VOUT3 Q2N2907 area=1 m=1
+V2 VOUT3 GND 5
+R2 VOUT2 GND 1k m=1
+**** begin user architecture code
+
+
+.tran 100p 10n
+.save all
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

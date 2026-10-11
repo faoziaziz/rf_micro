@@ -1,0 +1,25 @@
+RF Power Amplifier Simulation
+
+.include "/home/aziz-faozi/azizprojects/rf_ic/poweramp/mmbt2222.lib"
+
+* Komponen rangkaian
+Q2 net3 net1 net5 MMBT2222 area=1 m=1
+Q1 net1 net7 net2 MMBT2222 area=1 m=1
+
+R1 net6 net1 1k
+R2 net4 net1 1k
+C1 net3 net4 1p
+R3 net6 net3 1k
+L1 net2 GND 1n
+R4 GND net5 1k
+
+* Sumber sinyal input
+V1 net7 GND DC 3
+Vin net6 GND SIN(0 10m 1Meg)
+
+.GLOBAL GND
+
+* Analisis transient
+.tran 10n 10u
+
+.end

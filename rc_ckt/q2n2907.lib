@@ -1,0 +1,16 @@
+.model Q2N2907 PNP(
++ IS=1E-14
++ BF=200
++ VAF=50
++ IKF=0.5
++ ISE=1E-13
++ NE=1.5
++ BR=6
++ RB=10
++ RC=1
++ RE=0.5
++ CJE=20p
++ CJC=10p
++ TF=300p
++ TR=100n
+)
