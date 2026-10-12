@@ -1,0 +1,28 @@
+** sch_path: /home/aziz-faozi/azizprojects/rf_ic/poweramp/lna_2stages.sch
+
+.include "/home/aziz-faozi/azizprojects/rf_ic/poweramp/mmbt2222.lib"
+
+**.subckt lna_2stages
+R1 VOUT VIN 1k m=1
+C1 VOUT GND 1p m=1
+V1 VIN GND SIN(0 10m 1Meg)
+V2 net1 GND 5
+Q2 VOUT3 VOUT VOUT2 MMBT2222 area=1 m=1
+L5 VOUT2 GND 1n m=1
+R2 net1 VOUT3 1k m=1
+R3 net2 VOUT3 1k m=1
+C2 VOUT4 net2 1p m=1
+R4 net1 VOUT4 1k m=1
+Q1 VOUT4 VOUT3 net3 MMBT2222 area=1 m=1
+R5 net3 GND 1k m=1
+**** begin user architecture code
+
+
+.tran 10n 10u
+.save all
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

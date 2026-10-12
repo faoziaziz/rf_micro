@@ -1,0 +1,24 @@
+** sch_path: /home/aziz-faozi/azizprojects/rf_ic/mixer/mixer.sch
+
+.include "/home/aziz-faozi/azizprojects/rf_ic/poweramp/mmbt2222.lib"
+
+**.subckt mixer
+V1 VIN GND SIN(0 2 1Meg)
+V2 net1 GND 10
+R1 net1 VIF 125 m=1
+R2 net1 VIF 500 m=1
+V3 VLO GND SIN(0 2 2Meg)
+Q1 net2 VIN GND MMBT2222 area=1 m=1
+Q2 VIF VLO net2 MMBT2222 area=1 m=1
+Q3 net2 VLO VIF MMBT2222 area=1 m=1
+**** begin user architecture code
+
+
+.tran 100p 10n
+.save all
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
