@@ -67,6 +67,16 @@ N 150 -250 290 -250 {
 lab=VLO}
 N 360 -300 480 -300 {
 lab=VIF}
+N 480 -170 580 -170 {
+lab=#net2}
+N 580 -170 580 -150 {
+lab=#net2}
+N 460 -90 580 -90 {}
+N 460 -230 460 -90 {}
+N 460 -230 480 -230 {}
+N 520 -200 520 -190 {}
+N 520 -190 620 -190 {}
+N 620 -190 620 -120 {}
 C {vsource.sym} -90 30 0 0 {name=V1 value="SIN(0 10m 1Meg)" savecurrent=false}
 C {gnd.sym} -90 90 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} -90 -20 0 0 {name=p1 sig_type=std_logic lab=VIN
@@ -106,7 +116,7 @@ device=MMBT2222
 footprint=SOT23
 area=1
 m=1}
-C {npn.sym} 500 -200 2 0 {name=Q3
+C {npn.sym} 600 -120 2 0 {name=Q3
 model=MMBT2222
 device=MMBT2222
 footprint=SOT23
